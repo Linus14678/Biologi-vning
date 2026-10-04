@@ -1,296 +1,169 @@
-<!DOCTYPE html>
-<html lang="sv">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Cellbiologi – begreppsövning</title>
+<!DOCTYPE html><html lang="sv"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Biologi 2 – Cellbiologi: quiz och provfrågor</title>
 <style>
-:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#f3f6f4;--card:#fff;--ink:#16221d;--mute:#5d6e66;--line:#d3ddd8;--acc:#0f6b57;--accink:#fff;--ok:#1f8a4c;--mid:#b7791f;--bad:#c0392b;--sel:#dcefe8}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#101815;--card:#18231f;--ink:#e6efeb;--mute:#93a69d;--line:#2c3d36;--acc:#4cc3a2;--accink:#06231b;--ok:#4cc38a;--mid:#e0a84a;--bad:#ee7b6d;--sel:#1f3a31}}
-:root[data-theme="dark"]{--bg:#101815;--card:#18231f;--ink:#e6efeb;--mute:#93a69d;--line:#2c3d36;--acc:#4cc3a2;--accink:#06231b;--ok:#4cc38a;--mid:#e0a84a;--bad:#ee7b6d;--sel:#1f3a31}
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#f1f6f4;--card:#fff;--ink:#14272b;--mute:#58706f;--line:#d3dedb;--acc:#0e7c7b;--E:#2b78a8;--C:#a86d05;--A:#7b3fa0;--ok:#1b7f4b;--bad:#b3303a;--okbg:#e3f3ea;--badbg:#f9e6e7}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1a1c;--card:#172528;--ink:#e3eeec;--mute:#93aaa8;--line:#2b3f42;--acc:#4fc3c0;--E:#6db4dd;--C:#e0a93e;--A:#c192e3;--ok:#5fcf93;--bad:#ef7a82;--okbg:#173a28;--badbg:#41202a}}
+:root[data-theme="dark"]{--bg:#0f1a1c;--card:#172528;--ink:#e3eeec;--mute:#93aaa8;--line:#2b3f42;--acc:#4fc3c0;--E:#6db4dd;--C:#e0a93e;--A:#c192e3;--ok:#5fcf93;--bad:#ef7a82;--okbg:#173a28;--badbg:#41202a}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.5 "Segoe UI",system-ui,sans-serif}
-main{max-width:640px;margin:0 auto;padding:20px 16px 48px}
-h1{font:700 26px/1.2 Georgia,"Times New Roman",serif;margin:8px 0 6px}
-p{margin:0 0 14px;color:var(--mute)}
-.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}
-.chip{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:8px 14px;font:inherit;font-size:15px;cursor:pointer}
-.chip[aria-pressed="true"]{background:var(--sel);border-color:var(--acc);font-weight:600}
-button{font:inherit}
-.btn{background:var(--acc);color:var(--accink);border:0;border-radius:10px;padding:12px 20px;font-weight:600;cursor:pointer}
-.btn.alt{background:transparent;color:var(--ink);border:1px solid var(--line)}
-button:focus-visible,textarea:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
-.row{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
-.bar{height:6px;background:var(--line);border-radius:3px;overflow:hidden;margin-bottom:6px}
-.bar i{display:block;height:100%;background:var(--acc);width:0;transition:width .25s}
-.meta{display:flex;justify-content:space-between;color:var(--mute);font-size:14px;margin-bottom:14px}
-.term{font:700 30px/1.2 Georgia,serif;margin:4px 0 14px;overflow-wrap:anywhere}
-textarea{width:100%;min-height:96px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);padding:12px;font:inherit;resize:vertical}
-.facit{margin-top:14px;padding:14px;border-left:4px solid var(--acc);background:var(--sel);border-radius:0 10px 10px 0}
-.facit b{display:block;margin-bottom:4px}
-.g{flex:1;min-width:110px;border:2px solid;background:transparent;border-radius:10px;padding:10px;font-weight:600;cursor:pointer}
-.g.ok{color:var(--ok);border-color:var(--ok)}.g.mid{color:var(--mid);border-color:var(--mid)}.g.bad{color:var(--bad);border-color:var(--bad)}
-.big{font:700 44px/1 Georgia,serif}
-.miss{margin:12px 0 0;padding:0;list-style:none}
-.miss li{padding:8px 0;border-top:1px solid var(--line)}
-.miss span{color:var(--mute);font-size:15px}
-.lst{margin:8px 0 18px;padding:0;list-style:none}.lst li{display:flex;gap:10px;justify-content:space-between;align-items:center;padding:8px 0;border-top:1px solid var(--line)}.lst small{color:var(--mute);display:block;font-size:14px;line-height:1.35}.g.alls{background:var(--bad);color:var(--card);border-color:var(--bad)}.mv{display:flex;flex-direction:column;gap:6px;flex:none}.mini{border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:8px;padding:6px 10px;font-size:14px;cursor:pointer;flex:none}
-h2{font:700 20px Georgia,serif;margin:20px 0 0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif}
 [hidden]{display:none!important}
-</style>
-</head>
-<body>
-<main>
-<section id="start">
-  <h1>Cellbiologi – begreppsövning</h1>
-  <p>Skriv ungefär en mening om vad begreppet betyder. Jämför sedan med facit och bedöm dig själv ärligt.</p>
-  <div class="card">
-    <b>Välj områden</b>
-    <div class="chips" id="chips"></div>
-    <b>Vilka begrepp?</b>
-    <div class="chips" id="modes"></div>
-    <div class="chips"><button class="chip" id="shuf" aria-pressed="true">Blanda ordningen</button></div>
-    <div class="row"><button class="btn" id="go">Starta</button><button class="btn alt" id="lbtn">Mina listor</button></div>
-  </div>
-</section>
-
-<section id="quiz" hidden>
-  <div class="bar"><i id="pb"></i></div>
-  <div class="meta"><span id="cat"></span><span id="cnt"></span></div>
-  <div class="card">
-    <div class="term" id="term"></div>
-    <textarea id="ans" placeholder="Skriv din förklaring här…" aria-label="Din förklaring"></textarea>
-    <div class="row"><button class="btn" id="show">Visa facit</button><button class="btn alt" id="skip">Hoppa över</button></div>
-    <div id="fb" hidden>
-      <div class="facit"><b>Facit</b><span id="def"></span></div>
-      <p style="margin:14px 0 0">Hur gick det?</p>
-      <div class="row" style="margin-top:8px">
-        <button class="g ok" data-s="1">Kan det</button>
-        <button class="g mid" data-s="2">Delvis</button>
-        <button class="g bad" data-s="0">Kan inte</button>
-        <button class="g alls" data-s="3">Kan inte alls</button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="end" hidden>
-  <h1>Klart!</h1>
-  <div class="card">
-    <div class="big" id="score"></div>
-    <p id="sum" style="margin-top:8px"></p>
-    <ul class="miss" id="miss"></ul>
-    <div class="row"><button class="btn" id="redo">Öva på de som inte satt</button><button class="btn alt" id="home">Börja om</button></div>
-  </div>
-</section>
-<section id="lists" hidden>
-  <h1>Mina listor</h1>
-  <p>Sparas i den här webbläsaren. Sortera om genom att trycka på en pil-knapp vid ett begrepp.</p>
-  <div class="row" style="margin:0 0 8px"><button class="btn alt" id="lback">Tillbaka</button><button class="btn alt" id="reset">Nollställ allt</button></div>
-  <div id="lbox"></div>
-</section>
-</main>
-
+.w{max-width:700px;margin:0 auto;padding:18px 14px 40px}
+h1{font:700 1.7rem/1.2 Georgia,"Times New Roman",serif;margin:.2em 0 .3em}
+.lead{color:var(--mute);margin:0 0 14px}
+.tabs{display:flex;gap:6px;margin:0 0 14px;border-bottom:2px solid var(--line)}
+.tabs button{flex:1;background:none;border:0;border-bottom:3px solid transparent;margin-bottom:-2px;padding:10px 4px;font:inherit;font-weight:600;color:var(--mute);cursor:pointer}
+.tabs button.on{color:var(--acc);border-color:var(--acc)}
+.card{background:var(--card);border:1px solid var(--line);border-left-width:5px;border-radius:8px;padding:12px 14px;margin:0 0 12px}
+.card.ok{border-left-color:var(--ok)}.card.bad{border-left-color:var(--bad)}
+.meta{font-size:.82rem;color:var(--mute);display:flex;gap:8px;align-items:center}
+.q{font-weight:600;margin:.4em 0 .6em}
+.lv{font-weight:700;font-size:.75rem;padding:0 7px;border-radius:99px;border:1.5px solid currentColor;display:inline-block;line-height:1.5;flex:none}
+.lv.E{color:var(--E)}.lv.C{color:var(--C)}.lv.A{color:var(--A)}
+.opt{display:flex;gap:9px;align-items:flex-start;padding:8px 10px;border:1px solid var(--line);border-radius:6px;margin:5px 0;cursor:pointer}
+.opt input{margin-top:5px;flex:none}
+.opt.right{background:var(--okbg);border-color:var(--ok)}.opt.wrong{background:var(--badbg);border-color:var(--bad)}
+.ex{font-size:.92rem;margin:.6em 0 .2em;color:var(--mute)}
+textarea{width:100%;box-sizing:border-box;font:inherit;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:6px;padding:8px}
+button.go{background:var(--acc);color:#fff;border:0;border-radius:6px;padding:10px 16px;font:inherit;font-weight:600;cursor:pointer;margin-top:8px}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]) button.go{color:#082022}}
+:root[data-theme="dark"] button.go{color:#082022}
+button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+.sum{background:var(--okbg);border-radius:8px;padding:10px 14px;margin:0 0 12px;font-weight:600}
+.pb{height:9px;background:var(--line);border-radius:5px;overflow:hidden;margin:4px 0}
+.pb i{display:block;height:100%;background:var(--acc)}
+.row{display:flex;justify-content:space-between;gap:8px;font-weight:600}
+h2{font:700 1.15rem Georgia,serif;margin:1.2em 0 .4em}
+ul{margin:.4em 0;padding-left:1.2em}li{margin:.25em 0}
+</style></head><body><div class="w">
+<h1>Cellbiologi – quiz och provfrågor</h1>
+<p class="lead">Biologi 2, nivå E–A. Varje quiz har 10 slumpade frågor ur en bank på 50 och varje prov 10 skrivfrågor ur en bank på 20 (nivå E, C och A). Gör quizet, besvara provfrågorna och öppna sedan «Min analys» för att se vad du ska repetera.</p>
+<nav class="tabs"><button class="on" data-p="sq">Quiz</button><button data-p="sw">Provfrågor</button><button data-p="sr">Min analys</button></nav>
+<section id="sq"></section><section id="sw" hidden></section><section id="sr" hidden></section>
+</div>
 <script>
-const RAW = `Cellbiologi|Organell|Strukturell del inuti en cell med en särskild uppgift, t.ex. cellkärna eller mitokondrie.
-Cellbiologi|Cellmembran|Tunt hölje av fosfolipider och proteiner runt cellen som styr vad som tar sig in och ut.
-Cellbiologi|Cytoplasma/cellplasma|Geléartad massa inuti cellen, utanför kärnan, där organellerna ligger och många reaktioner sker.
-Cellbiologi|Cellskelett|Nätverk av proteintrådar som ger cellen form och stöd och möjliggör transport och rörelse.
-Cellbiologi|Flagell|Lång piskliknande utskott som får en cell att simma, t.ex. spermiecellens svans.
-Cellbiologi|Cilier|Många korta hårliknande utskott som rör cellen eller vätskan runt den, t.ex. i luftrören.
-Cellbiologi|Cellkärna|Organell som innehåller cellens DNA och styr cellens funktioner och delning.
-Cellbiologi|Endoplasmatiskt nätverk (ER)|Membransystem: skrovligt ER (med ribosomer) tillverkar proteiner, slätt ER bildar lipider och bryter ner gifter.
-Cellbiologi|Ljusreaktion|Första steget i fotosyntesen, i tylakoidmembranen: ljus används för att bilda ATP och NADPH och vatten spjälkas så att syrgas bildas.
-Cellbiologi|Kolfixering|Koldioxid binds och byggs in i organiska molekyler (glukos) i Calvincykeln.
-Cellbiologi|Mitokondrie|Cellens kraftverk där cellandningen sker och det mesta av ATP bildas.
-Cellbiologi|Mörkerreaktion|Calvincykeln i stroma, där ATP och NADPH från ljusreaktionen används för att bygga glukos av koldioxid.
-Cellbiologi|Ribosomer|Tillverkar proteiner utifrån mRNA; sitter fria i cytoplasman eller på ER.
-Cellbiologi|Golgiapparaten|Tar emot, modifierar, sorterar och paketerar proteiner i vesiklar för transport.
-Cellbiologi|Lysosom|Blåsa med nedbrytande enzymer som tar hand om skadade organeller, avfall och intagen näring.
-Cellbiologi|Kloroplast|Organell i växtceller och alger där fotosyntesen sker.
-Cellbiologi|Klorofyll|Grönt pigment i kloroplasten som fångar upp ljusenergi.
-Cellbiologi|Tylakoid|Säckformade membran i kloroplasten där ljusreaktionen sker; staplade bildar de grana.
-Cellbiologi|Stroma|Vätskan i kloroplasten runt tylakoiderna, där mörkerreaktionen (Calvincykeln) sker.
-Cellbiologi|Vakuol|Stor vätskefylld blåsa i växtceller som lagrar vatten och ämnen och håller uppe turgortrycket.
-Cellbiologi|Cellvägg|Stel yta utanför cellmembranet hos växter (cellulosa), svampar (kitin) och bakterier; ger stöd och skydd.
-Cellbiologi|Kitin|Starkt kolhydrat som bygger svampars cellväggar och insekters skal.
-Cellundersökning|Mikroskop|Instrument som förstorar så att man kan se celler och deras delar; ljusmikroskop eller elektronmikroskop.
-Cellundersökning|Centrifug|Snurrar prover snabbt så att tyngre delar sjunker och cellens delar kan separeras.
-Cellundersökning|Suspension|Blandning där små partiklar svävar i en vätska, t.ex. söndrigt cellmaterial i buffert.
-Cellundersökning|Supernatant|Vätskan ovanpå botten (pelleten) efter centrifugering.
-Cellundersökning|Pellet|Det tyngre fasta materialet som samlas i botten av röret efter centrifugering.
-Cellundersökning|Radioaktiv märkning|Ämne märks med en radioaktiv isotop så att man kan följa var det hamnar och vad det används till i cellen.
-Undersöka bakterier|Agar|Geléämne från alger som används som näringsunderlag för att odla bakterier.
-Undersöka bakterier|Petriskål|Grund rund skål med lock där bakterier odlas på agar.
-Undersöka bakterier|Platinaögla/ympnål|Verktyg för att överföra bakterier; steriliseras i låga före och efter användning.
-Undersöka bakterier|Autoklavera|Sterilisera med het vattenånga under tryck, ca 121 °C.
-Undersöka bakterier|Antiseptiskt|Ämne som dödar eller hämmar mikroorganismer på levande vävnad, t.ex. handsprit.
-Undersöka bakterier|Sterilisera|Döda alla mikroorganismer, även sporer, på ett föremål eller i ett medium.
-Undersöka bakterier|Rackla|Stryka ut bakterier i mönster på agarplatta så att enskilda kolonier växer fram.
-Membran och transport|Cellmembranens uppbyggnad|Dubbelt lager av fosfolipider med inlagrade proteiner och kolesterol som kan röra sig (flytande mosaikmodell).
-Membran och transport|Fosfolipider|Lipider med ett hydrofilt huvud och två hydrofoba fettsyrasvansar; bygger upp membranet.
-Membran och transport|Hydrofil|Vattenälskande; löser sig i vatten eller dras till vatten.
-Membran och transport|Hydrofob|Vattenavstötande; blandas inte med vatten.
-Membran och transport|Diffusion|Partiklar förflyttar sig spontant från högre till lägre koncentration.
-Membran och transport|Koncentrationsgradient|Skillnad i koncentration av ett ämne mellan två områden, vilket driver diffusion.
-Membran och transport|Osmos|Diffusion av vatten genom ett semipermeabelt membran, mot sidan med mest löst ämne.
-Membran och transport|Transportproteiner|Proteiner i membranet som hjälper ämnen som inte kan passera fritt att ta sig över.
-Membran och transport|Bärarprotein|Binder ett ämne och ändrar form så att ämnet förs över membranet.
-Membran och transport|Kanalproteiner|Proteiner med en kanal som släpper igenom specifika joner eller vatten.
-Membran och transport|Aktiv transport|Transport mot koncentrationsgradienten som kräver energi (ATP), t.ex. natrium-kaliumpumpen.
-Membran och transport|Passiv transport|Transport längs koncentrationsgradienten utan energitillförsel, t.ex. diffusion och osmos.
-Membran och transport|Endocytos|Cellen tar in ämnen när membranet snörs in till en vesikel.
-Membran och transport|Exocytos|Cellen släpper ut ämnen när en vesikel smälter samman med cellmembranet.
-Cellskelett och rörelse|Aktintrådar|Tunna proteintrådar som ger cellen form och rörelse och som samverkar med myosin vid muskelkontraktion.
-Cellskelett och rörelse|Mikrotubuli|Ihåliga rör av tubulin; bildar delningsspolen, bygger cilier och flageller och fungerar som transportspår.
-Cellskelett och rörelse|Intermediära trådar|Starka, stabila proteintrådar som ger mekanisk hållfasthet och förankrar organeller.
-Cellskelett och rörelse|Motorprotein|Protein som använder ATP för att röra sig längs cellskelettet och transportera last eller skapa rörelse.
-Cellskelett och rörelse|Myosin|Motorprotein som drar i aktintrådar och orsakar muskelkontraktion.
-Cellskelett och rörelse|Troponin|Protein på aktintråden som binder kalcium och får tropomyosin att lämna myosinets bindningsställen.
-Cellskelett och rörelse|Tropomyosin|Protein som i vila täcker myosinets bindningsställen på aktin så att muskeln inte drar ihop sig.
-Cellskelett och rörelse|Dynein|Motorprotein som rör sig längs mikrotubuli och får cilier och flageller att böja sig.
-Cellskelett och rörelse|Kemotaxis|Rörelse hos en cell eller organism mot eller bort från ett kemiskt ämne.
-Signalering och muskler|Signalsubstans|Molekyl som skickas från en cell och binder till receptorer på en annan cell, t.ex. hormon eller neurotransmittor.
-Signalering och muskler|Receptor|Protein som binder en specifik signalsubstans och utlöser ett svar i cellen.
-Signalering och muskler|Hjärtmuskelcell|Tvärstrimmig, ofrivillig och förgrenad muskelcell i hjärtat med många mitokondrier.
-Signalering och muskler|Glatt muskulatur|Ofrivillig muskulatur utan tvärstrimmor i t.ex. tarmar och blodkärl; långsam och uthållig.
-Signalering och muskler|Tvärstrimmig skelettmuskulatur|Viljestyrd muskulatur fäst vid skelettet som ser strimmig ut på grund av sarkomererna.
-Signalering och muskler|Muskelfiber|Lång flerkärnig muskelcell fylld av fibriller.
-Signalering och muskler|Myoglobin|Syrebindande protein i muskelceller som lagrar syre.
-Signalering och muskler|Hemoglobin|Syrebindande protein i röda blodkroppar som transporterar syre i blodet.
-Signalering och muskler|Fibriller|Trådar (myofibriller) i muskelfibern som består av aktin och myosin ordnade i sarkomerer.
-Signalering och muskler|Sarkomer|Muskelns minsta sammandragande enhet, mellan två Z-skivor, med aktin- och myosintrådar.
-Signalering och muskler|Röda fibrer|Långsamma, uthålliga muskelfibrer med mycket myoglobin och mitokondrier; aerob förbränning.
-Signalering och muskler|Vita fibrer|Snabba muskelfibrer med lite myoglobin som får energi anaerobt och tröttas snabbt.
-Mikroorganismer|Prokaryota celler|Celler utan cellkärna och membranomgivna organeller; DNA ligger fritt i cytoplasman, t.ex. bakterier.
-Mikroorganismer|Arkéer|Encelliga prokaryoter som skiljer sig från bakterier och ofta lever i extrema miljöer.
-Mikroorganismer|Gramfärgning|Färgmetod som delar in bakterier i grampositiva (lila) och gramnegativa (rosa) utifrån cellväggens uppbyggnad.
-Mikroorganismer|Plasmid|Liten cirkulär DNA-molekyl utanför bakteriens kromosom, ofta med t.ex. resistensgener.
-Mikroorganismer|Koloni|Synlig grupp av identiska bakterier som vuxit fram ur en enda cell på agar.
-Mikroorganismer|Fotoautotrof|Bygger organiskt material av koldioxid med ljus som energikälla (fotosyntes).
-Mikroorganismer|Heterotrof|Får både energi och kol från organiskt material som andra organismer bildat.
-Mikroorganismer|Kemoautotrof|Får energi från oorganiska ämnen och bygger organiskt material av koldioxid.
-Mikroorganismer|Kocker|Runda bakterier.
-Mikroorganismer|Baciller|Stavformade bakterier.
-Mikroorganismer|Spiriller|Spiralformade bakterier.
-Mikroorganismer|Grampositiv|Bakterie med tjock cellvägg som behåller den lila färgen vid gramfärgning.
-Mikroorganismer|Gramnegativ|Bakterie med tunn cellvägg och yttre membran som tappar den lila färgen och blir rosa/röd.
-Mikroorganismer|Gramvariabla|Bakterier som ibland färgas som grampositiva och ibland som gramnegativa, t.ex. beroende på ålder eller förhållanden.
-Mikroorganismer|Gramneutrala|Bakterier som inte färgas tydligt av gramfärgning, ofta på grund av en annorlunda cellvägg.
-Mikroorganismer|Pili|Tunna utskott på bakterier som används för fastsättning och utbyte av DNA.
-Mikroorganismer|Endosporer|Tåliga vilostadier som vissa bakterier bildar inuti sig och som överlever värme, torka och kemikalier.
-Virus|Bakteriofag|Virus som angriper och förökar sig i bakterier.
-Virus|Kapsel|Skyddande proteinhölje (kapsid) runt virusets arvsmassa.
-Virus|Virus|Icke-cellulär partikel av arvsmassa i proteinhölje som bara kan föröka sig inuti en värdcell.
-Virus|Värdspecifik|Viruset kan bara infektera vissa arter eller celltyper som har rätt receptorer.
-Virus|Retrovirus|RNA-virus som skriver om sitt RNA till DNA med omvänt transkriptas, t.ex. HIV.
-Virus|Lytisk cykel|Viruset förökar sig direkt i värdcellen som sedan sprängs så att nya virus frisätts.
-Virus|Lysogen cykel|Virusets DNA byggs in i värdens DNA och ligger vilande och kopieras när cellen delar sig.
-Virus|Lyseras|Cellen sprängs och dör så att innehållet, t.ex. nya virus, släpps ut.
-Virus|Omvänt transkriptas|Enzym som skriver om RNA till DNA.
-Virus|Knoppning|Nya virus lämnar cellen genom att snöra av sig med en bit av cellmembranet som hölje.
-Virus|Provirus|Virus-DNA som är inbyggt i värdcellens arvsmassa (kallas profag hos bakterier).`;
+const $=s=>document.querySelector(s);
+const T=["1.1 Celler, membran och transport","1.2 Cellprocesser","1.3 Cellskelett, muskler och samverkan","1.4 Bakterier","1.5 Virus"];
+const B=[
+[0,"E","Vilket påstående stämmer för prokaryota celler?",["De har cellkärna men saknar cellvägg","De saknar cellkärna och membranomslutna organeller","De är alltid flercelliga","De har sitt DNA i många linjära kromosomer"],1,"Prokaryota celler saknar cellkärna och membranomslutna organeller. DNA finns som en kromosom, ofta med plasmider."],
+[0,"E","Vilken funktion har kolesterol i cellmembranet?",["Det fungerar som cellens ID-bricka","Det håller membranets fluiditet lagom","Det transporterar joner genom membranet","Det bildar membranets dubbellager"],1,"Kolesterol håller fluiditeten lagom. ID-brickor är glykoproteiner och dubbellagret består av fosfolipider."],
+[0,"C","En djurcell läggs i en hypoton lösning. Vad händer med cellen?",["Vatten rör sig ut och cellen krymper","Vatten rör sig in och cellen sväller","Inget händer eftersom membranet är tätt","Lösta ämnen rör sig ut via osmos"],1,"Hypoton lösning har lägre halt lösta ämnen än cellen, så vatten rör sig in via osmos och cellen sväller."],
+[0,"A","Ett ämne transporteras av ett bärarprotein från låg till hög koncentration. Vilken slutsats kan du dra?",["Det är passiv transport utan energiåtgång","Det är aktiv transport som kräver ATP","Det är osmos","Det är diffusion genom fosfolipiddubbellagret"],1,"Transport mot koncentrationsgradienten kräver energi (ATP) och kallas aktiv transport. Passiv transport går alltid med gradienten."],
+[1,"E","Vad menas med katabolism?",["Uppbyggande reaktioner där nya ämnen syntetiseras","Nedbrytande reaktioner där stora molekyler bryts ner till mindre","Reaktioner som bara sker i växter","Reaktioner som inte kräver enzymer"],1,"Katabolism är nedbrytande reaktioner, anabolism är uppbyggande."],
+[1,"E","Var i cellen sker citronsyracykeln?",["I cellplasman","I mitokondriens matrix","I mitokondriens inre membran","I kloroplastens stroma"],1,"Glykolysen sker i cellplasman, citronsyracykeln i mitokondriens matrix och andningskedjan i det inre membranet."],
+[1,"C","En hämmare binder till enzymets aktiva yta så att substratet inte får plats. Vad kallas den?",["Kompetitiv hämmare","Icke-kompetitiv hämmare","Coenzym","Motorprotein"],0,"En kompetitiv hämmare konkurrerar med substratet om den aktiva ytan. En icke-kompetitiv hämmare ändrar i stället enzymets form."],
+[1,"A","Vilket påstående om fotosyntesens ljusreaktion är korrekt?",["Syret kommer från CO2 som klyvs i stroma","Syret kommer från vatten som klyvs (fotolys) för att ersätta förlorade elektroner","Syret bildas när NADPH oxideras i Calvincykeln","Syret kommer från glukos som bryts ner"],1,"I ljusreaktionen (i tylakoiderna) klyvs H2O för att ersätta elektronerna som lämnat PSII, och O2 frigörs."],
+[2,"E","Vilka tre slags proteintrådar bygger upp cellskelettet?",["Aktintrådar, mikrotubuli och intermediära trådar","Myosin, troponin och tropomyosin","Flageller, pili och cilier","Kolesterol, glykoprotein och aquaporiner"],0,"Cellskelettet består av aktintrådar, mikrotubuli och intermediära trådar."],
+[2,"E","Vilket protein samarbetar med aktin vid muskelkontraktion?",["Myosin","Rubisko","Peptidoglykan","Acetylkolin"],0,"Myosin är ett motorprotein som använder ATP för att gå längs aktintrådarna. Acetylkolin är en signalsubstans."],
+[2,"C","Vilken roll har kalciumjoner vid muskelkontraktion?",["De binder till myosin och spjälkar ATP","De binder till troponin, så att tropomyosin flyttas och myosin kan binda aktin","De bryter ner acetylkolin","De bildar motorändplattan"],1,"Ca2+ frisätts från det sarkoplasmatiska nätverket och binder till troponin. Då flyttas tropomyosin och myosinets bindningsställen på aktinet friläggs."],
+[2,"A","En muskelfiber kontraherar «allt eller inget». Hur kan muskeln ändå variera sin kraft?",["Varje fiber kan dra ihop sig halvvägs","Genom att antalet aktiverade muskelfibrer varierar","Genom att aktinfilamenten blir kortare","Genom att myosin byts ut mot aktin"],1,"Varje fiber kontraherar fullt ut eller inte alls, så kraften regleras genom hur många fibrer som aktiveras."],
+[3,"E","Hur färgas grampositiva bakterier vid gramfärgning?",["Rosa/röda","Blå/lila","Gröna","De färgas inte alls"],1,"Grampositiva (G+) färgas blå/lila och gramnegativa (G−) rosa/röda. Grampositiva har ett tjockt lager peptidoglykan."],
+[3,"E","Hur förökar sig bakterier?",["Genom att infektera en värdcell","Genom delning, vilket ger genetiskt identiska bakterier","Genom meios och befruktning","Genom knoppning med hjälp av en capsid"],1,"Bakterier förökar sig genom delning, vilket ger genetiskt identiska bakterier."],
+[3,"C","En bakterie delar sig var 20:e minut under gynnsamma förhållanden. Hur många bakterier finns efter en timme om man börjar med en?",["3","6","8","60"],2,"En timme är 3 delningar: 1 → 2 → 4 → 8. Det är exponentiell tillväxt."],
+[3,"A","En bakterie får energi från kemiska föreningar och använder organiska kolföreningar som kolkälla. Vad kallas den?",["Fotoautotrof","Fotoheterotrof","Kemoautotrof","Kemoheterotrof"],3,"Kemo- = energi från kemiska föreningar, hetero- = organiska kolföreningar som kolkälla. En fotoautotrof använder ljus och CO2."],
+[4,"E","Varför räknas virus inte som levande?",["De är för små för att ses","De saknar egen ämnesomsättning","De har varken DNA eller RNA","De kan inte föröka sig"],1,"Virus saknar egen ämnesomsättning och förökar sig bara genom att infektera en värdcell."],
+[4,"E","Vad kallas virus som infekterar bakterier?",["Provirus","Retrovirus","Bakteriofager","Endosporer"],2,"Virus som infekterar bakterier kallas bakteriofager."],
+[4,"C","Vilket enzym bär ett retrovirus med sig, och vad gör det?",["Rubisko, som binder in CO2","Omvänt transkriptas, som bildar DNA utifrån virus-RNA","ATP-syntas, som bildar ATP","Amylas, som bryter ner stärkelse"],1,"Omvänt transkriptas skriver om virus-RNA till DNA, som sedan kan fogas in i värdcellens genom."],
+[4,"A","Varför har ett virus som dödar sin värd mycket snabbt svårt att bli framgångsrikt?",["Det kan inte infektera celler","Det behöver en levande värd för att kunna spridas vidare","Det saknar capsid","Immunförsvaret kan inte upptäcka det"],1,"Virus behöver levande värdar för att föröka sig och spridas. Mildare symptom och effektiv spridning (t.ex. droppinfektion) gynnar viruset."],
+[0,"E","Vad säger cellteorin?",["Allt levande består av celler och celler bildas bara från andra celler","Alla celler har cellkärna","Celler kan bildas spontant ur icke-levande material","Bara växter består av celler"],0,"Cellteorin: allt levande består av celler, och celler kan endast bildas från andra celler."],
+[0,"E","Vad är diffusion?",["Utjämning av koncentration när molekyler rör sig slumpmässigt","Transport som alltid kräver ATP","Import av ämnen med membranblåsor","Förflyttning av vatten genom aquaporiner"],0,"Molekyler i lösning rör sig och krockar, vilket jämnar ut koncentrationen (med gradienten, utan energi)."],
+[0,"C","Vilka ämnen kan passera cellmembranet utan transportprotein?",["Små, opolära, oladdade molekyler som O2 och CO2","Joner som Na+ och K+","Stora laddade proteiner","Alla ämnen som löser sig i vatten"],0,"Membranet är semipermeabelt. Joner och stora molekyler behöver transportprotein."],
+[0,"C","I ett försök kan jod passera dialysslangen men stärkelse inte. Vad visar det?",["Membranet är semipermeabelt: små molekyler passerar, stora inte","Stärkelse rör sig snabbare än jod","Jod är för stor för att passera","Membranet släpper igenom alla ämnen"],0,"Semipermeabelt membran släpper bara igenom vissa partiklar."],
+[0,"A","Ett membran har mycket omättade fettsyrasvansar. Hur påverkar det membranet?",["Svansarna packas glesare och membranet blir mer rörligt","Svansarna packas tätare och membranet blir stelare","Membranet blir helt tätt","Inget, bara kolesterol påverkar rörligheten"],0,"Omättade svansar har knickar och packas glesare, vilket ger ett mer fluid membran."],
+[0,"A","Två lösningar skiljs åt av ett semipermeabelt membran. Vilken har lägst vattenpotential och åt vilket håll rör sig vattnet?",["Den med högst halt lösta ämnen; vattnet rör sig dit","Den med lägst halt lösta ämnen; vattnet rör sig dit","Den med högst halt lösta ämnen; vattnet rör sig därifrån","Vattnet rör sig inte, bara de lösta ämnena"],0,"Fler lösta partiklar ger lägre vattenpotential, och vatten rör sig mot låg vattenpotential."],
+[1,"E","Vad är ATP?",["Cellens energibärare, bildas i cellandningen och fotosyntesen","Ett enzym som bryter ner glukos","Ett färgpigment i kloroplasten","En vätebärare i citronsyracykeln"],0,"ATP är energibäraren. ADP + Pi bildar ATP och energin frigörs när bindningen bryts."],
+[1,"E","Var sker fotosyntesens mörkerreaktion?",["I stroma i kloroplasten","I tylakoidernas membran","I mitokondriens matrix","I cellplasman"],0,"Mörkerreaktionen (Calvin-Benson-cykeln) sker i stroma, ljusreaktionen i tylakoiderna."],
+[1,"C","Vilka ämnen bildas i fotosyntesens ljusreaktion?",["O2, ATP och NADPH","Glukos och CO2","Pyrodruvsyra och NADH","Mjölksyra och etanol"],0,"Ljusreaktionen ger O2 (från vatten), ATP (kemiosmos) och NADPH. Glukos bildas i mörkerreaktionen."],
+[1,"C","Vad händer med pyrodruvsyra vid syrebrist?",["Den omvandlas till mjölksyra eller etanol","Den går direkt in i andningskedjan","Den lagras som stärkelse","Den bryts ner till glukos"],0,"Utan syre kan inte andningskedjan fungera, så pyrodruvsyra blir mjölksyra eller etanol."],
+[1,"A","Varför ger andningskedjan mycket mer ATP än glykolysen?",["Vätebärarna (NADH, FADH2) oxideras med syre och driver stor ATP-bildning","Andningskedjan bryter ner mer glukos","Glykolysen sker i mitokondrien","Glykolysen kräver syre"],0,"Glykolysen ger netto 2 ATP. Vätebärarna från bl.a. citronsyracykeln ger den största ATP-mängden i andningskedjan."],
+[1,"A","En reaktionskedjas slutprodukt blockerar ett tidigare enzym. Vad är fördelen?",["Cellen undviker överproduktion av slutprodukten","Reaktionen går snabbare ju mer produkt som finns","Mer enzym bildas","Substratet bryts ner helt"],0,"Det är negativ feedback som håller produktionen lagom."],
+[2,"E","Vad kallas muskelcellens cellmembran?",["Sarkolemma","Sarkomer","Sarkoplasma","Fascikel"],0,"Sarkolemma = cellmembranet, sarkoplasma = cytoplasman, sarkomer = enhet i fibrillen."],
+[2,"E","Vilken signalsubstans frisätts vid motorändplattan?",["Acetylkolin","Troponin","Myosin","Kalcium"],0,"Nervimpulsen gör att acetylkolin (ACh) frisätts och startar en impuls i muskelcellen."],
+[2,"C","Hur hålls celler samman i vävnader hos djur respektive växter?",["Djur: proteinkopplingar i cellmembranen; växter: cellväggar","Djur: cellväggar; växter: proteinkopplingar","Båda: enbart proteinkopplingar","Båda: enbart cellväggar"],0,"Växtceller saknar proteinkopplingar och hålls ihop av cellväggarna."],
+[2,"C","Vad är en sarkomer?",["Den mindre enhet i fibrillen som innehåller aktin- och myosinfilament","En flerkärnig muskelcell","Muskelcellens cytoplasma","Ett protein som binder kalcium"],0,"Fibrillerna är ordnade i sarkomerer, som förkortas vid kontraktion."],
+[2,"A","Vad händer med muskelkontraktionen om ATP tar slut?",["Myosinet kan inte lossna från aktinet och binda längre bak","Kalcium frisätts inte längre","Acetylkolin bryts ner","Troponin bildas inte"],0,"ATP behövs för att myosinet ska lossna och binda om längre bak på aktinet."],
+[2,"A","Vad skiljer muskler för små precisa rörelser från muskler som inte kräver precision?",["Varje nerv styr få muskelfibrer i stället för flera hundra","Varje nerv styr flera hundra fibrer","De har bara vita fibrer","Deras fibrer kontraherar halvvägs"],0,"Precisa muskler har många nerver, så enskilda fibrer styrs separat."],
+[3,"E","Vilka tre domäner delas levande organismer in i?",["Bakterier, arkéer och eukaryoter","Bakterier, virus och svampar","Växter, djur och bakterier","Prokaryoter, virus och eukaryoter"],0,"De tre domänerna är bakterier, arkéer och eukaryoter. Virus räknas inte som levande."],
+[3,"E","Vad kallas stavformade bakterier?",["Baciller","Kocker","Spiriller","Stafylokocker"],0,"Kocker är kulformade, baciller stavformade och spiriller/spiroketer spiralformade."],
+[3,"C","Varför odlas bakterier ofta på agar i petriskål?",["Agar är en gelé med näring där kolonier blir synliga","Agar dödar främmande mikroorganismer","Agar gör bakterierna gramnegativa","Agar ger bakterierna ljusenergi"],0,"Bakterierna stryks ut på agar så att kolonier kan studeras (form, lukt)."],
+[3,"C","Hur kan bakterier röra sig mot näringsämnen?",["Receptorer i cellmembranet känner av ämnet och styr flagellerna (kemotaxis)","Genom att bilda endosporer","Genom att fotosyntetisera","Genom att dela sig snabbare"],0,"Receptorer påverkar flagellernas hastighet, så bakterien rör sig mot näring och bort från gifter."],
+[3,"A","Bakterier kan inte ta upp de flesta makromolekyler. Hur får de ändå näring?",["De utsöndrar enzymer som bryter ner molekylerna och tar upp de mindre delarna","De tar upp dem med endocytos","De bildar endosporer","De fotosyntetiserar alltid"],0,"Enzymerna bryter ner makromolekylerna utanför cellen."],
+[3,"A","En bakterie fäster vid värdceller och undviker att ätas av makrofager. Vilket utskott bidrar?",["Pili","Endospor","Plasmid","Peptidoglykan"],0,"Pili används bl.a. för att fästa vid celler, överföra genetiskt material och motstå makrofager."],
+[4,"E","Vad kallas virusets proteinhölje?",["Capsid (kapsel)","Plasmid","Peptidoglykan","Flagell"],0,"Capsiden omger virusets genom."],
+[4,"E","Vilket slags genom kan ett virus ha?",["DNA eller RNA","Bara DNA","Bara RNA","Varken DNA eller RNA"],0,"Genomet i kapseln är antingen DNA eller RNA."],
+[4,"C","Hur kan nya viruspartiklar frisättas från värdcellen?",["Genom lysis eller knoppning","Genom delning","Genom endosporbildning","Genom osmos"],0,"Naket virus lyserar cellen, virus med hölje frisätts ofta genom knoppning."],
+[4,"C","Vad är ett provirus?",["Virus-DNA som fogats in i värdens genom och kan ligga latent","Ett virus utan capsid","Ett virus som infekterar bakterier","Ett virus som bär omvänt transkriptas"],0,"Provirus kan ligga latent tills det aktiveras, t.ex. herpesvirus."],
+[4,"A","Varför kan ett latent herpesvirus plötsligt ge symtom?",["Provirus aktiveras, t.ex. av UV-strålning eller kemikalier, och bildar nya viruspartiklar","Viruset bildar endosporer","Viruset delar sig som en bakterie","Värdcellen byter genom"],0,"Provirus kan aktiveras av yttre faktorer."],
+[4,"A","Virus A sprids via hostningar och ger milda symtom. Virus B ger mycket hög dödlighet. Vilket sprids sannolikt effektivast?",["A, eftersom värdarna lever längre och kan smitta fler","B, eftersom det dödar fler","B, eftersom det bildar endosporer","Båda lika effektivt"],0,"Droppinfektion är bästa spridningssättet, och för hög dödlighet gör att viruset förlorar sin värd."]
+];
+let Q=[];
+const sh=a=>a.map(v=>[Math.random(),v]).sort((x,y)=>x[0]-y[0]).map(v=>v[1]);
+function draw(){Q=[];const m=sh(['C','C','A','A',Math.random()<.5?'C':'A']);T.forEach((_,t)=>['E',m[t]].forEach(l=>sh(B.filter(x=>x[0]===t&&x[1]===l)).slice(0,1).forEach(x=>Q.push(x.slice()))));Q=sh(Q);Q.forEach(x=>{const c=x[3][x[4]];x[3]=sh(x[3]);x[4]=x[3].indexOf(c)});ans={}}
+const WB=[
+{t:0,q:"Beskriv cellmembranets uppbyggnad och förklara hur fosfolipiderna ordnar sig i vatten.",c:[["E","Membranet är ett dubbellager av fosfolipider."],["E","Minst en annan komponent nämns med funktion (transportprotein, kolesterol eller glykoprotein)."],["C","Fosfolipidernas vattenlösliga huvuden vetter utåt mot vattnet och de fettlösliga svansarna inåt mot varandra."],["A","Förklarar fluid mosaic model: komponenterna flyter fritt i membranets plan, och mättade/omättade svansar påverkar packningen och därmed rörligheten."]]},
+{t:0,q:"En cell placeras i en hyperton lösning. Förklara vad osmos är, åt vilket håll vattnet rör sig och vad som händer med cellen.",c:[["E","Osmos är nettotransport av vatten över ett semipermeabelt membran."],["E","Hyperton lösning har hög halt lösta ämnen."],["C","Vatten rör sig ut ur cellen mot den koncentrerade lösningen och cellen krymper."],["A","Resonerar med vattenpotential (vatten rör sig från hög till låg) och förklarar varför de lösta partiklarna inte själva kan passera membranet."]]},
+{t:1,q:"Jämför cellandning och fotosyntes: var i cellen sker de, vilka ämnen går in och ut, och vilken roll har ATP?",c:[["E","Cellandning: glukos + O2 → CO2 + H2O + energi. Fotosyntes: CO2 + H2O + ljus → glukos + O2."],["E","Cellandning sker i cellplasman och mitokondrien, fotosyntes i kloroplasten."],["C","Delstegen nämns med rätt plats: glykolys, citronsyracykel, andningskedja resp. ljusreaktion (tylakoid) och mörkerreaktion/Calvincykeln (stroma)."],["A","ATP och vätebärare (NADH/NADPH) kopplas till rätt steg, t.ex. att andningskedjan ger mest ATP och att protongradient och ATP-syntas (kemiosmos) bildar ATP."]]},
+{t:1,q:"Förklara hur ett enzym fungerar, skillnaden mellan kompetitiv och icke-kompetitiv hämmare samt vad negativ feedback innebär.",c:[["E","Enzymer är proteiner som katalyserar reaktioner; substratet passar i den aktiva ytan som en nyckel i ett lås."],["C","Kompetitiv hämmare blockerar den aktiva ytan; icke-kompetitiv ändrar enzymets form så att substratet inte passar."],["C","Negativ feedback: slutprodukten blockerar ett enzym tidigare i reaktionskedjan."],["A","Förklarar varför det är fördelaktigt (cellen undviker överproduktion) eller ger ett konkret exempel, t.ex. reglering av cellandningen."]]},
+{t:2,q:"Beskriv i ordning hur en muskel drar ihop sig, från nervimpuls till att sarkomeren förkortas.",c:[["E","Nervimpuls når motorändplattan, acetylkolin frisätts och en elektrisk impuls startar i muskelcellen."],["C","Ca2+ frisätts, binder till troponin och tropomyosin flyttas så att myosin kan binda aktin."],["A","Myosin drar aktin mot mitten; ATP gör att myosinet lossnar och binder längre bak; processen upprepas, kräver ATP och sarkomeren förkortas."]]},
+{t:4,q:"Jämför bakterier och virus. Ta upp uppbyggnad, om de räknas som levande och hur de förökar sig.",c:[["E","Bakterier är prokaryota celler med egen ämnesomsättning; virus är inte celler och saknar ämnesomsättning."],["E","Bakterier förökar sig genom delning; virus genom att infektera en värdcell."],["C","Virus består av en capsid (protein) med DNA eller RNA; bakterier har bl.a. en DNA-kromosom och cellvägg."],["A","Beskriver virusförökning mer detaljerat (värdcellens byggstenar och enzymer används, nya partiklar frisätts genom lysis eller knoppning) eller retrovirus/provirus."]]},
+{t:0,q:"Jämför kanalproteiner och bärarproteiner. Förklara också skillnaden mellan passiv och aktiv transport och vad endocytos och exocytos är.",c:[["E","Kanalprotein är vattenfyllda rör som släpper igenom framför allt joner; bärarprotein ändrar form när rätt ämne binder in."],["E","Endocytos är import och exocytos export av ämnen med hjälp av membranblåsor."],["C","Passiv transport sker med koncentrationsgradienten utan energi (kanalprotein är snabba); aktiv transport sker mot gradienten och kräver ATP."],["A","Länkar ihop: bärarprotein kan vara både passiva och aktiva, och endo-/exocytos är aktiv transport eftersom de kräver ATP."]]},
+{t:0,q:"Jämför eukaryota och prokaryota celler och förklara varför celler i samma organism ändå kan se olika ut.",c:[["E","Eukaryota celler har cellkärna och organeller; prokaryota saknar cellkärna och membranomslutna organeller."],["C","Prokaryoter har DNA som en kromosom (ev. plasmider), cellvägg som skiljer sig från växters, kan ha flagell/pili och är encelliga."],["C","Nämner att cellteorin säger att allt levande består av celler och att celler bara bildas från andra celler."],["A","Förklarar att celler specialiseras efter uppgift (stamceller är ospecialiserade) men har gemensam grunduppbyggnad och arbetssätt."]]},
+{t:2,q:"Jämför röda och vita muskelfibrer. Vilken typ dominerar hos en maratonlöpare respektive en sprinter, och varför?",c:[["E","Röda fibrer: god blodförsörjning, många mitokondrier och mycket myoglobin. Vita fibrer: sämre blodförsörjning, färre mitokondrier."],["C","Röda fibrer utvinner energi främst aerobt och är långsamma men uthålliga; vita främst anaerobt och är snabba men inte uthålliga."],["A","Kopplar till idrott: maratonlöpare har mest röda fibrer (uthållighet), sprinter mest vita (snabbhet), och nämner att pyrodruvsyra vid syrebrist kan bli mjölksyra."]]},
+{t:2,q:"Förklara hur celler kommunicerar med varandra och varför kommunikationen är viktig för flercelliga organismer.",c:[["E","Celler skickar signalsubstanser som tas emot av receptorer."],["C","Receptorer är proteiner med bestämd form som binder en specifik signalsubstans."],["C","Kommunikation var en förutsättning för att flercellighet skulle kunna utvecklas."],["A","Beskriver effekten i cellen: en kaskad av reaktioner som aktiverar eller inaktiverar enzymer, eller slår på eller av gener."]]},
+{t:3,q:"Beskriv hur gramfärgning går till och skillnaden i cellvägg mellan grampositiva och gramnegativa bakterier. Förklara också vad endosporer är.",c:[["E","Grampositiva färgas blå/lila och gramnegativa rosa/röda."],["C","Grampositiva har ett tjockt lager peptidoglykan; gramnegativa ett tunt lager och dessutom ett yttre membran utanför cellväggen."],["C","Endosporer är ett vilostadium med extra tjock cellvägg som hjälper bakterien att överleva extrema miljöer."],["A","Anger att endosporen bara innehåller det nödvändigaste (cellmembran, DNA, få organeller) och förklarar varför det gör den tålig."]]},
+{t:4,q:"Beskriv hur ett RNA-virus förökar sig i en värdcell och diskutera vad som gör ett virus framgångsrikt att sprida.",c:[["E","Viruset fastnar på värdcellen och för över sitt genom in i den."],["C","Virus-RNA transkriberas till mRNA, translateras till virusprotein, nytt virus-RNA bildas, partiklarna sätts ihop och frisätts genom lysis eller knoppning."],["C","Värdcellens byggstenar och enzymer används för att tillverka nya virus."],["A","Resonerar om framgångsfaktorer: spridningssätt (droppinfektion är bäst), mild sjukdom/lagom dödlighet eftersom viruset behöver en levande värd, och geografi (storstad vs landsbygd)."]]},
+{t:1,q:"Förklara hur ljusreaktionen i fotosyntesen går till och vilka produkter den ger.",c:[["E","Sker i tylakoiderna där klorofyll fångar in ljusenergi."],["C","Vatten klyvs (fotolys) och O2 frisätts; elektroner skickas genom en elektrontransportkedja från PSII mot PSI."],["C","NADPH bildas när NADP+ tar upp elektroner och H+ vid PSI."],["A","En protongradient byggs upp i tylakoiden och H+ passerar tillbaka via ATP-syntas, så att ATP bildas (kemiosmos)."]]},
+{t:1,q:"Förklara begreppen metabolism, katabolism och anabolism och beskriv cellandningens tre delreaktioner.",c:[["E","Metabolism är ämnesomsättning; katabolism är nedbrytande och anabolism uppbyggande reaktioner."],["E","Glykolys, citronsyracykel och andningskedja nämns i rätt ordning."],["C","Platserna anges: cellplasman, mitokondriens matrix och mitokondriens inre membran."],["A","Jämför ATP-bildningen (litet netto i glykolysen, mest i andningskedjan via vätebärare) och förklarar vad som händer vid syrebrist."]]},
+{t:2,q:"Beskriv cellskelettets tre typer av proteintrådar och förklara hur motorproteinet myosin kan transportera ämnen i cellen.",c:[["E","Aktintrådar, mikrotubuli och intermediära trådar nämns; cellskelettet ger stadga och form."],["C","Cellskelettet ger även rörelse och är mer föränderligt än ett vanligt skelett."],["C","Myosin är ett motorprotein som använder ATP för att ändra form och gå längs aktintrådar."],["A","Förklarar att myosin med inbundna membranblåsor transporterar ämnen längs aktintrådarna, och kopplar till muskelkontraktion som ett annat samarbete mellan aktin och myosin."]]},
+{t:3,q:"Förklara hur bakterier kan delas in efter energikälla och kolkälla, och ge exempel på en fotoautotrof och en kemoheterotrof.",c:[["E","Energikälla: ljus (foto-) eller kemiska föreningar (kemo-)."],["E","Kolkälla: CO2 (autotrof) eller organiska kolföreningar (heterotrof)."],["C","Fotoautotrof använder ljus och CO2 (t.ex. blågröna bakterier); kemoheterotrof använder kemiska föreningar som energi och organiska kolföreningar som kolkälla."],["A","Förklarar att bakterier utsöndrar enzymer som bryter ner makromolekyler eftersom de bara kan ta upp små delar."]]},
+{t:3,q:"Beskriv hur man odlar och studerar bakterier i laboratoriet och varför sterilteknik är viktig.",c:[["E","Bakterier odlas på agar med näring i petriskål."],["C","Bakterierna stryks ut med platinaögla eller rackla så att kolonier kan studeras (form, lukt)."],["C","Sterilteknik behövs för att bli av med oönskade mikroorganismer."],["A","Nämner steriliseringsmetoder (värmeskåp, låga, autoklavering) och att metoden måste passa materialet, t.ex. att näringsämnen inte tål låga."]]},
+{t:3,q:"Beskriv bakteriers utseende och hur de kan röra sig.",c:[["E","Former: kulformade kocker, stavformade baciller och spiralformade spiriller/spiroketer."],["C","Kocker kan bilda diplokocker, streptokocker och stafylokocker; en koloni är ett synligt kluster."],["C","Rörelse med flageller, slem eller skruvtrådar."],["A","Förklarar kemotaxis: receptorer i cellmembranet känner av näring och gifter och påverkar flagellernas hastighet."]]},
+{t:4,q:"Förklara vad ett retrovirus är och hur ett provirus kan ge en latent infektion.",c:[["E","Retrovirus bär med sig enzymet omvänt transkriptas."],["C","Omvänt transkriptas bildar DNA utifrån virus-RNA."],["C","Virus-DNA fogas in i värdens genom och kallas provirus."],["A","Provirus kan ligga latent och aktiveras av t.ex. UV-strålning eller kemikalier (som herpesvirus), varefter nya viruspartiklar bildas."]]},
+{t:4,q:"Beskriv hur en bakteriofag infekterar en bakterie och förökar sig (lytisk cykel).",c:[["E","Bakteriofager är virus som infekterar bakterier; viruset fastnar på bakteriens yta."],["C","Genomet förs in i värdcellen och värdens byggstenar och enzymer används för att tillverka nya virus."],["C","Viruspartiklar sätts ihop och frigörs genom lysis eller knoppning."],["A","Jämför DNA-virus (uttrycks och replikeras som värdens gener) med RNA-virus (transkriberas till mRNA och virus-RNA)."]]}
+];
+let ans={},graded=false,W=[],S=[];
+function drawW(){W=[];T.forEach((_,t)=>sh(WB.filter(x=>x.t===t)).slice(0,2).forEach(x=>W.push(x)));W=sh(W);S=W.map(w=>({s:false,c:w.c.map(()=>false)}))}
+function nw(){drawW();rw();window.scrollTo(0,0)}
 
-const ALL = RAW.split("\n").map(l => { const [c,t,d] = l.split("|"); return {c,t,d}; });
-const CATS = [...new Set(ALL.map(x => x.c))];
-const $ = id => document.getElementById(id);
-const K = "cellbio-v1";
-let mem = {};
-try { mem = JSON.parse(localStorage.getItem(K)) || {}; } catch (e) { mem = {}; }
-const save = () => { try { localStorage.setItem(K, JSON.stringify(mem)); } catch (e) {} };
-const st = x => mem[x.t] === 1 ? "kan" : mem[x.t] === 2 ? "delvis" : mem[x.t] === 0 ? "kanej" : mem[x.t] === 3 ? "alls" : "ny";
-const LBL = {alls:"Kan inte alls", kanej:"Kan inte", delvis:"Delvis", kan:"Kan det", ny:"Ej övade"}, VAL = {alls:3, kanej:0, delvis:2, kan:1};
-const MODES = [["all","Alla"],["ny","Ej övade"],["alls","Kan inte alls"],["kanej","Kan inte"],["delvis","Delvis"],["kan","Kan det"]];
-let chosen = new Set(CATS), shuffle = true, mode = "all", deck = [], i = 0, res = [];
-
-CATS.forEach(c => {
-  const b = document.createElement("button");
-  b.className = "chip"; b.textContent = c; b.setAttribute("aria-pressed", "true");
-  b.onclick = () => { chosen.has(c) ? chosen.delete(c) : chosen.add(c); b.setAttribute("aria-pressed", chosen.has(c)); };
-  $("chips").appendChild(b);
-});
-function drawModes(){
-  $("modes").innerHTML = "";
-  MODES.forEach(([m,l]) => {
-    const n = m === "all" ? ALL.length : ALL.filter(x => st(x) === m).length;
-    const b = document.createElement("button");
-    b.className = "chip"; b.textContent = l + " (" + n + ")"; b.setAttribute("aria-pressed", mode === m);
-    b.onclick = () => { mode = m; drawModes(); };
-    $("modes").appendChild(b);
-  });
+function rq(){
+ $('#sq').innerHTML=(graded?`<p class="sum">Du fick ${Q.filter((x,i)=>ans[i]===x[4]).length} av ${Q.length} rätt. Öppna «Min analys» för att se vad du ska träna på.</p>`:'')+
+ Q.map((x,i)=>{const [t,l,q,o,a,e]=x,ok=ans[i]===a;
+  return `<div class="card ${graded?(ok?'ok':'bad'):''}"><div class="meta"><span class="lv ${l}">${l}</span>${T[t]}</div><p class="q">${i+1}. ${q}</p>`+
+  o.map((s,j)=>`<label class="opt ${graded&&j===a?'right':''} ${graded&&ans[i]===j&&j!==a?'wrong':''}"><input type="radio" name="q${i}" ${ans[i]===j?'checked':''} ${graded?'disabled':''} onchange="ans[${i}]=${j}">${s}</label>`).join('')+
+  (graded?`<p class="ex"><b>${ok?'Rätt.':(ans[i]===undefined?'Obesvarad.':'Fel.')}</b> ${e}</p>`:'')+'</div>'}).join('')+
+ `<button class="go" onclick="gr()">${graded?'Nytt quiz med nya frågor':'Rätta quizet'}</button>`;
 }
-$("shuf").onclick = e => { shuffle = !shuffle; e.target.setAttribute("aria-pressed", shuffle); };
-
-function show(id){ ["start","quiz","end","lists"].forEach(s => $(s).hidden = s !== id); if (id === "start") drawModes(); window.scrollTo(0,0); }
-function start(items){
-  deck = items.slice();
-  if (shuffle) for (let k = deck.length - 1; k > 0; k--) { const j = Math.floor(Math.random()*(k+1)); [deck[k],deck[j]] = [deck[j],deck[k]]; }
-  i = 0; res = []; show("quiz"); card();
+function gr(){if(graded)draw();graded=!graded;rq();window.scrollTo(0,0)}
+function rw(){
+ $('#sw').innerHTML='<p class="lead">Skriv svaret med egna ord. Klicka sedan på facit och kryssa i det du faktiskt hade med – ärligt, så blir analysen rättvisande.</p>'+
+ W.map((w,i)=>`<div class="card"><div class="meta">${T[w.t]}</div><p class="q">${i+1}. ${w.q}</p><textarea rows="5" placeholder="Skriv ditt svar här"></textarea><button class="go" onclick="sf(${i})">Visa facit och bedöm dig själv</button><div id="f${i}" hidden><p class="ex">Kryssa i det du hade med:</p>`+
+ w.c.map((c,j)=>`<label class="opt"><input type="checkbox" onchange="S[${i}].c[${j}]=this.checked"><span><span class="lv ${c[0]}">${c[0]}</span> ${c[1]}</span></label>`).join('')+'</div></div>').join('')+'<button class="go" onclick="nw()">Nytt prov med 10 nya frågor</button>';
 }
-function card(){
-  const q = deck[i];
-  $("term").textContent = q.t; $("cat").textContent = q.c; $("cnt").textContent = (i+1) + " / " + deck.length;
-  $("pb").style.width = (i / deck.length * 100) + "%";
-  $("ans").value = ""; $("fb").hidden = true; $("show").hidden = false; $("skip").hidden = false; $("ans").readOnly = false;
-  $("ans").focus();
+function sf(i){S[i].s=true;$('#f'+i).hidden=false}
+function ra(){
+ const L={E:[0,0],C:[0,0],A:[0,0]},P=T.map(()=>[0,0]),M=T.map(()=>[]);
+ const add=(l,t,ok,txt)=>{L[l][1]++;P[t][1]++;if(ok){L[l][0]++;P[t][0]++}else M[t].push(txt)};
+ if(graded)Q.forEach((x,i)=>add(x[1],x[0],ans[i]===x[4],'Quiz '+(i+1)+': '+x[2]));
+ W.forEach((w,i)=>{if(S[i].s)w.c.forEach((c,j)=>add(c[0],w.t,S[i].c[j],'Provfråga '+(i+1)+': '+c[1]))});
+ if(!(L.E[1]+L.C[1]+L.A[1])){$('#sr').innerHTML='<div class="card"><p>Här visas din analys när du har rättat quizet eller bedömt dig själv på minst en provfråga.</p></div>';return}
+ const pc=a=>a[1]?Math.round(100*a[0]/a[1]):null,bar=p=>`<div class="pb"><i style="width:${p}%"></i></div>`;
+ const e=pc(L.E),c=pc(L.C),a=pc(L.A);
+ let v;
+ if(e!==null&&e<75)v='Börja med grunderna: E-nivån sitter inte säkert än. Lägg tiden på det som står under «Bli bättre på».';
+ else if(c!==null&&c<75)v='E-nivån sitter. Nästa steg är C: träna på att förklara samband och inte bara nämna begrepp.';
+ else if(a!==null&&a<75)v='E och C sitter bra. För A-nivå behöver du kunna resonera, jämföra och dra slutsatser i nya situationer.';
+ else v='Starkt resultat på alla nivåer du testat. Fortsätt med att träna på att formulera utförliga svar.';
+ let h=`<h2>Så går det på varje nivå</h2>`+['E','C','A'].map(l=>`<div class="row"><span><span class="lv ${l}">${l}</span> ${L[l][1]?L[l][0]+' av '+L[l][1]:'ej testat'}</span><span>${L[l][1]?pc(L[l])+'%':''}</span></div>${L[l][1]?bar(pc(L[l])):''}`).join('')+
+ `<p class="ex">${v} (En fingervisning, inte ett betyg. Cirka 75 % på en nivå brukar tyda på att du är trygg där.)</p><h2>Bli bättre på</h2>`;
+ const ord=T.map((_,i)=>i).sort((x,y)=>(P[x][1]?P[x][0]/P[x][1]:2)-(P[y][1]?P[y][0]/P[y][1]:2));
+ ord.forEach(i=>{
+  if(!P[i][1]){h+=`<div class="card"><b>${T[i]}</b><p class="ex">Inte testat än.</p></div>`;return}
+  const p=pc(P[i]);
+  h+=`<div class="card ${p>=75?'ok':'bad'}"><div class="row"><span>${T[i]}</span><span>${p}%</span></div>${bar(p)}`+
+  (p>=75&&!M[i].length?'<p class="ex">Det här sitter bra.</p>':`<p class="ex"><b>Repetera presentationen «${T[i]}».</b> Det här missade du:</p><ul>${M[i].slice(0,7).map(m=>`<li>${m}</li>`).join('')}</ul>`)+'</div>'});
+ $('#sr').innerHTML=h;
 }
-function reveal(){
-  $("def").textContent = deck[i].d; $("fb").hidden = false; $("show").hidden = true; $("skip").hidden = true; $("ans").readOnly = true;
-}
-function grade(s){ mem[deck[i].t] = s; save(); res[i] = s; next(); }
-function next(){ i++; i < deck.length ? card() : finish(); }
-function finish(){
-  $("pb").style.width = "100%"; show("end");
-  const graded = res.filter(g => g !== undefined).length, kan = res.filter(g => g === 1).length;
-  $("score").textContent = (graded ? Math.round(kan / graded * 100) : 0) + " %";
-  const c = v => res.filter(g => g === v).length;
-  $("sum").textContent = c(1) + " kan det, " + c(2) + " delvis, " + c(0) + " kan inte, " + c(3) + " kan inte alls. Sparat i dina listor.";
-  const weak = deck.filter((_, k) => res[k] !== undefined && res[k] !== 1);
-  $("miss").innerHTML = "";
-  weak.forEach(w => { const li = document.createElement("li"); li.innerHTML = "<b></b><br><span></span>"; li.firstChild.textContent = w.t; li.lastChild.textContent = w.d; $("miss").appendChild(li); });
-  $("redo").hidden = !weak.length; $("redo").onclick = () => start(weak);
-}
-$("go").onclick = () => {
-  const items = ALL.filter(x => chosen.has(x.c) && (mode === "all" || st(x) === mode));
-  if (items.length) start(items); else alert("Inga begrepp matchar ditt val.");
-};
-$("show").onclick = reveal; $("skip").onclick = next; $("home").onclick = () => show("start");
-document.querySelectorAll(".g").forEach(b => b.onclick = () => grade(+b.dataset.s));
-$("ans").addEventListener("keydown", e => { if (e.key === "Enter" && (e.ctrlKey || e.metaKey) && !$("show").hidden) reveal(); });
-
-function drawLists(){
-  const box = $("lbox"); box.innerHTML = "";
-  ["alls","kanej","delvis","kan","ny"].forEach(s => {
-    const l = LBL[s];
-    const items = ALL.filter(x => st(x) === s);
-    const h = document.createElement("h2"); h.textContent = l + " (" + items.length + ")"; box.appendChild(h);
-    const ul = document.createElement("ul"); ul.className = "lst";
-    items.forEach(x => {
-      const li = document.createElement("li"), d = document.createElement("div"), b = document.createElement("b"), sm = document.createElement("small");
-      b.textContent = x.t; sm.textContent = x.d; d.append(b, sm); li.appendChild(d);
-      const mv = document.createElement("div"); mv.className = "mv";
-      ["alls","kanej","delvis","kan"].filter(t => t !== s).forEach(t => {
-        const m = document.createElement("button"); m.className = "mini";
-        m.textContent = "→ " + LBL[t];
-        m.onclick = () => { mem[x.t] = VAL[t]; save(); drawLists(); };
-        mv.appendChild(m);
-      });
-      li.appendChild(mv);
-      ul.appendChild(li);
-    });
-    box.appendChild(ul);
-  });
-}
-let armed = false;
-$("reset").onclick = e => {
-  if (!armed) { armed = true; e.target.textContent = "Säker? Tryck igen"; return; }
-  armed = false; e.target.textContent = "Nollställ allt"; mem = {}; save(); drawLists();
-};
-$("lbtn").onclick = () => { drawLists(); show("lists"); };
-$("lback").onclick = () => show("start");
-drawModes();
-</script>
-</body>
-</html>
+document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{
+ document.querySelectorAll('.tabs button').forEach(x=>x.classList.toggle('on',x===b));
+ ['sq','sw','sr'].forEach(id=>$('#'+id).hidden=id!==b.dataset.p);
+ if(b.dataset.p==='sr')ra();window.scrollTo(0,0)});
+draw();drawW();rq();rw();
+</script></body></html>
